@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI応用編｜プロンプトの書き方・画像生成・動画作成・アプリ開発のやり方 | DEMI AI STUDIO</title>
+<meta name="description" content="AIをもっと使いこなすための応用ガイド。伝わるプロンプトの型、画像生成（Midjourney・Canva等）、動画作成（Runway・Vrew等）、noteでの発信、アプリ開発（Claude Code・Cursor等）まで具体的なツール名つきで解説します。">
+<link rel="canonical" href="https://supadondada.github.io/demi-ai-studio/howto.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DEMI AI STUDIO">
+<meta property="og:title" content="AI応用編｜プロンプトの書き方・画像生成・動画作成・アプリ開発のやり方">
+<meta property="og:description" content="プロンプトの型、画像生成、動画作成、note執筆、アプリ開発。AIを使いこなす5つの応用スキルをツール名つきで解説。">
+<meta property="og:url" content="https://supadondada.github.io/demi-ai-studio/howto.html">
+<meta property="og:image" content="https://supadondada.github.io/demi-ai-studio/ogp.png">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI応用編｜プロンプトの書き方・画像生成・動画作成・アプリ開発のやり方">
+<meta name="twitter:description" content="プロンプトの型、画像生成、動画作成、note執筆、アプリ開発をツール名つきで解説。">
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "AI応用編｜プロンプトの書き方・画像生成・動画作成・アプリ開発のやり方",
+  "description": "プロンプトの型、画像生成、動画作成、note執筆、アプリ開発までAI活用の応用スキルを解説",
+  "inLanguage": "ja",
+  "mainEntityOfPage": "https://supadondada.github.io/demi-ai-studio/howto.html",
+  "author": { "@type": "Organization", "name": "DEMI AI STUDIO" },
+  "publisher": { "@type": "Organization", "name": "DEMI AI STUDIO" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://supadondada.github.io/demi-ai-studio/" },
+    { "@type": "ListItem", "position": 2, "name": "AI応用編（各AIの使い方）", "item": "https://supadondada.github.io/demi-ai-studio/howto.html" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "プロンプトがうまく書けません。コツはありますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "「役割・目的・条件・出力形式」の4点を伝える型を使うと回答の質が安定します。完璧なプロンプトを1回で書く必要はなく、AIの回答に対して「もっと短く」「別の案も」と会話で修正していくのがコツです。" }
+    },
+    {
+      "@type": "Question",
+      "name": "AIで作った画像は商用利用できますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "サービスと契約プランによって異なります。Midjourneyは有料プランで商用利用可、Canvaは規約の範囲内で可など条件が分かれるため、収益化する前に必ず各サービスの利用規約を確認してください。" }
+    },
+    {
+      "@type": "Question",
+      "name": "プログラミング未経験でもAIでアプリを作れますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "作れます。v0やBoltのように日本語で指示するだけでWebアプリを生成できるサービスや、Claude Codeのように対話しながら開発を進められるツールが登場しており、未経験者が簡単なツールを作るハードルは大きく下がっています。" }
+    },
+    {
+      "@type": "Question",
+      "name": "AIで書いた記事をnoteに投稿してもいいですか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "AIの利用自体は禁止されていませんが、AIの出力をそのまま貼るだけの記事は読者に見抜かれやすく評価もされにくいです。構成案や下書きにAIを使い、自分の体験や意見を加えて仕上げるのがおすすめです。" }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">DEMI <span>AI</span> STUDIO</a>
+    <nav class="global-nav" aria-label="グローバルナビゲーション">
+      <ul>
+        <li><a href="start.html">AI入門編</a></li>
+        <li><a href="basics.html">基礎知識</a></li>
+        <li><a href="howto.html" aria-current="page">AI応用編</a></li>
+        <li><a href="business.html">実業務編</a></li>
+        <li><a href="sidejob.html">副業編</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<nav class="breadcrumb" aria-label="パンくずリスト">
+  <ol>
+    <li><a href="index.html">ホーム</a></li>
+    <li>AI応用編（各AIの使い方）</li>
+  </ol>
+</nav>
+
+<main>
+  <article>
+    <div class="hero">
+      <p class="hero-label">STEP 2｜AI応用編</p>
+      <h1>各AIの使い方ガイド<br>プロンプトから画像・動画・アプリ開発まで</h1>
+      <div class="hero-visual" role="img" aria-label="文章・画像・動画・アプリなどAIで作れるものを表したイラスト">
+        <svg viewBox="0 0 560 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="280" cy="100" r="46" fill="#2b5aed"/>
+          <text x="280" y="108" font-size="18" font-weight="bold" fill="#ffffff" text-anchor="middle">AI</text>
+          <rect x="40" y="30" width="90" height="64" rx="10" fill="#eef3ff"/>
+          <text x="85" y="58" font-size="12" fill="#2b5aed" text-anchor="middle">文章</text>
+          <line x1="55" y1="72" x2="115" y2="72" stroke="#a9c0fa" stroke-width="3"/>
+          <line x1="55" y1="82" x2="100" y2="82" stroke="#a9c0fa" stroke-width="3"/>
+          <rect x="40" y="115" width="90" height="64" rx="10" fill="#eef3ff"/>
+          <circle cx="70" cy="145" r="10" fill="#a9c0fa"/>
+          <path d="M 55 170 L 80 150 L 95 162 L 110 148 L 118 170 Z" fill="#2b5aed"/>
+          <text x="85" y="136" font-size="12" fill="#2b5aed" text-anchor="middle">画像</text>
+          <rect x="430" y="30" width="90" height="64" rx="10" fill="#eef3ff"/>
+          <path d="M 465 50 L 490 62 L 465 74 Z" fill="#2b5aed"/>
+          <text x="475" y="88" font-size="12" fill="#2b5aed" text-anchor="middle">動画</text>
+          <rect x="430" y="115" width="90" height="64" rx="10" fill="#eef3ff"/>
+          <text x="475" y="152" font-size="16" font-weight="bold" fill="#2b5aed" text-anchor="middle">&lt;/&gt;</text>
+          <text x="475" y="172" font-size="12" fill="#2b5aed" text-anchor="middle">アプリ</text>
+          <line x1="140" y1="62" x2="235" y2="88" stroke="#a9c0fa" stroke-width="3" stroke-dasharray="6 6"/>
+          <line x1="140" y1="147" x2="235" y2="115" stroke="#a9c0fa" stroke-width="3" stroke-dasharray="6 6"/>
+          <line x1="325" y1="88" x2="420" y2="62" stroke="#a9c0fa" stroke-width="3" stroke-dasharray="6 6"/>
+          <line x1="325" y1="115" x2="420" y2="147" stroke="#a9c0fa" stroke-width="3" stroke-dasharray="6 6"/>
+        </svg>
+      </div>
+      <p class="lead">基本操作に慣れた方向けに、AIを「使いこなす」ための5つのスキルを解説します。すべてのベースになる<strong>プロンプトの型</strong>から読むのがおすすめです。</p>
+    </div>
+
+    <div class="content">
+
+      <nav class="anchor-nav" aria-label="ページ内ナビゲーション">
+        <ul>
+          <li><a href="#prompt">① プロンプトの出し方</a></li>
+          <li><a href="#image">② 画像生成</a></li>
+          <li><a href="#video">③ 動画作成</a></li>
+          <li><a href="#note">④ noteで発信</a></li>
+          <li><a href="#dev">⑤ アプリ開発</a></li>
+        </ul>
+      </nav>
+
+      <section class="section" aria-labelledby="prompt">
+        <h2 id="prompt">① プロンプトの出し方 — 回答の質が劇的に変わる「型」</h2>
+        <p>プロンプトとは、AIへの指示文のこと。同じAIでも<strong>プロンプト次第で回答の質は何倍も変わります</strong>。難しいテクニックは不要で、次の4点を伝える「型」を覚えるだけで十分です。</p>
+
+        <h3>基本の型：役割・目的・条件・出力形式</h3>
+        <div class="prompt-box">
+          <span class="prompt-label">テンプレート（コピペして書き換え）</span>
+          <code>あなたは【役割：プロの編集者】です。
+【目的：新商品の紹介文を作りたい】
+条件：
+・【ターゲット：30代の働く女性】
+・【文字数：200字以内】
+・【トーン：親しみやすく】
+出力形式：【3案、それぞれ見出し付きで】</code>
+        </div>
+
+        <h3>悪い例と良い例</h3>
+        <div class="good-bad">
+          <div class="prompt-box bad">
+            <span class="prompt-label">✕ 悪い例</span>
+            <code>ブログ書いて</code>
+            <p style="margin-top:10px; font-size:0.88rem; color:#5a6272;">何について・誰向けに・どんな長さか不明。当たり障りのない文章しか返ってきません。</p>
+          </div>
+          <div class="prompt-box">
+            <span class="prompt-label">◎ 良い例</span>
+            <code>在宅ワーカー向けブログの記事を書いてください。テーマは「朝の集中力を上げる習慣」。見出し3つ、各300字、実践しやすい具体例を入れて。</code>
+          </div>
+        </div>
+
+        <h3>覚えておくと便利な3つのテクニック</h3>
+        <ul>
+          <li><strong>会話で修正する</strong> — 1回で完璧を求めず「もっと短く」「例え話を入れて」「別案を3つ」と重ねる。これが一番のコツです。</li>
+          <li><strong>お手本を見せる</strong> — 「この文体を真似て書いて（例文を貼る）」と例を渡すと精度が跳ね上がります（Few-Shotと呼ばれる手法）。</li>
+          <li><strong>逆に質問させる</strong> — 「良い提案に必要な情報があれば、先に私に質問してください」と付けると、AIがヒアリングしてくれます。</li>
+        </ul>
+        <div class="note-box">
+          <strong>上達の近道：</strong>プロンプト集を暗記するより、<em>「部下に仕事を頼むときに伝えるべきことを全部書く」</em>と考えるのが本質です。背景・目的・完成イメージを伝えれば、AIは期待に応えてくれます。
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="image">
+        <h2 id="image">② 画像生成 — イラスト・ロゴ・SNS画像を作る</h2>
+        <p>「言葉で説明した画像をAIが描いてくれる」のが画像生成AI。SNS投稿、ブログのアイキャッチ、資料の挿絵、ロゴ案づくりなどに使えます。主要ツールはこちらです。</p>
+
+        <div class="tool">
+          <div class="tool-head"><span class="tool-name">ChatGPT / Gemini の画像生成</span><span class="tool-price">無料枠あり</span></div>
+          <p>普段の対話AIにそのまま「〜の画像を作って」と頼むだけ。日本語が通じて追加修正も会話でできるため、<strong>初心者はまずここから</strong>。</p>
+          <p class="tool-for">向いている用途：ブログ挿絵、アイデアスケッチ、とりあえず試したい人</p>
+        </div>
+        <div class="tool">
+          <div class="tool-head"><span class="tool-name">Midjourney（ミッドジャーニー）</span><span class="tool-price">有料（月10ドル〜）</span></div>
+          <p>芸術性の高さで定評のある定番サービス。Webサイト上で英語プロンプトを入力して生成します。クオリティ重視ならこれ。</p>
+          <p class="tool-for">向いている用途：ハイクオリティなイラスト・コンセプトアート、画像販売（→ <a href="sidejob.html">副業編</a>）</p>
+        </div>
+        <div class="tool">
+          <div class="tool-head"><span class="tool-name">Canva（キャンバ）AI画像生成</span><span class="tool-price">無料枠あり</span></div>
+          <p>デザインツールCanvaの中でAI画像を生成し、そのままバナーやSNS投稿に加工できる。文字入れ・テンプレートが豊富で実用性No.1。</p>
+          <p class="tool-for">向いている用途：SNS投稿画像、サムネイル、チラシ、プレゼン素材</p>
+        </div>
+        <div class="tool">
+          <div class="tool-head"><span class="tool-name">Stable Diffusion（ステーブルディフュージョン）</span><span class="tool-price">無料（自分のPCで実行）</span></div>
+          <p>オープンソースの画像生成AI。高性能なPCが必要で設定も上級者向けですが、生成し放題・細かいカスタマイズが可能。</p>
+          <p class="tool-for">向いている用途：大量生成、こだわりの追求、コストを抑えたい上級者</p>
+        </div>
+
+        <h3>画像プロンプトのコツ</h3>
+        <div class="prompt-box">
+          <span class="prompt-label">例：ブログのアイキャッチを作る</span>
+          <code>ノートパソコンで作業する女性のフラットデザインイラスト。
+背景は淡いブルー、余白多め、明るく前向きな雰囲気。
+横長（16:9）、文字は入れない。</code>
+        </div>
+        <ul>
+          <li><strong>被写体＋画風＋雰囲気＋構図</strong>の順で指定する</li>
+          <li>画風の指定が効く：「フラットデザイン」「水彩風」「写真風」「アニメ風」「3Dレンダリング」</li>
+          <li>気に入らなければ「同じ構図で色だけ暖色に」と部分修正を頼む</li>
+        </ul>
+        <div class="note-box warn">
+          <strong>注意：</strong>実在の人物・キャラクター・ブランドロゴに似せた画像の生成・公開はトラブルのもと。商用利用の可否はサービスごとに規約を確認してください。
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="video">
+        <h2 id="video">③ 動画作成 — ショート動画からプロモ映像まで</h2>
+        <p>動画AIは大きく2種類。<strong>「映像そのものを生成する」タイプ</strong>と、<strong>「編集を自動化する」タイプ</strong>です。目的に合わせて選びましょう。</p>
+
+        <h3>映像を生成するAI</h3>
+        <div class="tool">
+          <div class="tool-head"><span class="tool-name">Runway（ランウェイ）</span><span class="tool-price">無料枠あり</span></div>
+          <p>テキストや1枚の画像から数秒の動画を生成できる代表格。SNS用のループ映像や商品イメージ動画づくりに。</p>
+          <p class="tool-for">向いている用途：SNS用ショート映像、イメージカット、MV風素材</p>
+        </div>
+        <div class="tool">
+          <div class="tool-head"><span class="tool-name">Sora（ソラ）/ Veo（ヴィオ）</span><span class="tool-price">有料プラン中心</span></div>
+          <p>OpenAIのSora、GoogleのVeoはテキストからリアルな映像を生成する最先端モデル。ChatGPTやGeminiの有料プランから利用できます。</p>
+          <p class="tool-for">向いている用途：リアル志向の映像表現、広告・プロモ素材の試作</p>
+        </div>
+
+        <h3>編集を自動化するAI</h3>
+        <div class="tool">
+          <div class="tool-head"><span class="tool-name">Vrew（ブリュー）</span><span class="tool-price">無料枠あり</span></div>
+          <p>動画をアップすると音声を自動で文字起こしし、<strong>字幕付け・不要部分のカットが文章編集の感覚でできる</strong>国内人気ツール。AIナレーション（読み上げ音声）も作れます。</p>
+          <p class="tool-for">向いている用途：YouTube・ショート動画の字幕編集、解説動画づくり</p>
+        </div>
+        <div class="tool">
+          <div class="tool-head"><span class="tool-name">CapCut（キャップカット）</span><span class="tool-price">無料枠あり</span></div>
+          <p>スマホで完結する定番動画編集アプリ。自動字幕・AIエフェクト・テンプレートが豊富で、TikTok/Instagramリール向けに最適。</p>
+          <p class="tool-for">向いている用途：スマホだけでSNS動画を量産したい人</p>
+        </div>
+
+        <h3>初心者向け・最初の1本の作り方</h3>
+        <ol class="steps">
+          <li><span class="step-title">台本をChatGPT/Claudeで作る</span><p>「30秒のショート動画の台本を。テーマは〇〇、冒頭2秒で惹きつける構成で」</p></li>
+          <li><span class="step-title">素材を用意する</span><p>スマホで撮影するか、Canva/Runwayで画像・映像素材を生成。</p></li>
+          <li><span class="step-title">VrewまたはCapCutで編集</span><p>自動字幕を付けて、テンポよくカット。AIナレーションを使えば顔出し・声出し不要。</p></li>
+        </ol>
+      </section>
+
+      <section class="section" aria-labelledby="note">
+        <h2 id="note">④ noteなどで発信する — AIと二人三脚の文章術</h2>
+        <p>文章プラットフォーム「note」やブログでの発信は、AIとの相性が抜群です。ただし<strong>AIの出力をそのまま貼るだけの記事は読まれません</strong>。AIは「編集者・壁打ち相手」として使うのが正解です。</p>
+
+        <h3>記事作成の5ステップ（AI活用ポイントつき）</h3>
+        <ol class="steps">
+          <li><span class="step-title">ネタ出し</span><p>「私は〇〇の経験があります。noteで需要のありそうな記事テーマを20個提案して」</p></li>
+          <li><span class="step-title">構成づくり</span><p>「このテーマで、読者が最後まで読みたくなる見出し構成を作って。想定読者は〇〇」</p></li>
+          <li><span class="step-title">下書き</span><p>見出しごとにAIに書かせてもよいですが、<em>自分の体験談・失敗談・意見は自分で書く</em>。ここが記事の価値になります。</p></li>
+          <li><span class="step-title">推敲</span><p>「この文章を校正して。誤字脱字、回りくどい表現、論理の飛躍を指摘して」— AIは校正が得意です。</p></li>
+          <li><span class="step-title">タイトル・見出し画像</span><p>「この記事のタイトル案を10個。クリックしたくなるものを」＋ 見出し画像はCanvaやChatGPTで生成。</p></li>
+        </ol>
+        <div class="note-box">
+          <strong>差がつくポイント：</strong>読者が知りたいのは「正しい一般論」ではなく「あなたの実体験」。AIに一般論を任せ、<em>体験と本音を自分が書く</em>分業が、AI時代に読まれる記事の作り方です。noteの有料記事化については<a href="sidejob.html">副業編</a>で解説します。
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="dev">
+        <h2 id="dev">⑤ アプリ開発 — プログラミング未経験でも作れる時代</h2>
+        <p>「日本語で欲しいものを説明するとAIがコードを書いてくれる」——アプリ開発のハードルは劇的に下がりました。レベル別におすすめツールを紹介します。</p>
+
+        <h3>レベル1：まったくの未経験者向け（ノーコード感覚）</h3>
+        <div class="tool">
+          <div class="tool-head"><span class="tool-name">v0（ブイゼロ）</span><span class="tool-price">無料枠あり</span></div>
+          <p>「家計簿アプリを作って」のように日本語で頼むだけでWebアプリの画面と動きを生成。ブラウザだけで完結し、そのまま公開までできます。</p>
+        </div>
+        <div class="tool">
+          <div class="tool-head"><span class="tool-name">Bolt（ボルト）/ Replit（レプリット）</span><span class="tool-price">無料枠あり</span></div>
+          <p>チャットで指示しながらアプリを組み立てられるブラウザ開発環境。Replitはスマホアプリからでも開発できるのが特徴。</p>
+        </div>
+
+        <h3>レベル2：本格的に開発したい人向け</h3>
+        <div class="tool">
+          <div class="tool-head"><span class="tool-name">Claude Code（クロードコード）</span><span class="tool-price">有料プラン中心</span></div>
+          <p>Anthropic製のAIコーディングエージェント。「〇〇な機能を追加して」と対話するだけでファイル作成・修正・テストまで自律的に進めてくれます。<strong>本サイトもこの方法で作られています</strong>。</p>
+        </div>
+        <div class="tool">
+          <div class="tool-head"><span class="tool-name">Cursor（カーソル）/ GitHub Copilot（コパイロット）</span><span class="tool-price">無料枠あり</span></div>
+          <p>コードエディタにAIが組み込まれたツール。書きかけのコードの続きを提案してくれたり、エラーの原因を説明してくれたりします。プログラミング学習にも最適。</p>
+        </div>
+
+        <h3>未経験から最初のアプリを作る手順</h3>
+        <ol class="steps">
+          <li><span class="step-title">作りたいものを1つに絞る</span><p>「自分が毎日使う小さな道具」がおすすめ。例：持ち物チェックリスト、割り勘計算機、習慣トラッカー。</p></li>
+          <li><span class="step-title">v0やBoltに日本語で依頼する</span><p>「シンプルな割り勘計算アプリ。人数と金額を入れると1人分を表示。スマホで見やすく」</p></li>
+          <li><span class="step-title">会話で改善する</span><p>「端数は切り上げに」「履歴を残せるように」と要望を重ねて完成度を上げる。</p></li>
+          <li><span class="step-title">公開してみる</span><p>各サービスのワンクリック公開機能でURLを発行。友人に使ってもらえば立派な開発者です。</p></li>
+        </ol>
+      </section>
+
+      <section class="section faq" aria-labelledby="faq">
+        <h2 id="faq">よくある質問</h2>
+        <details>
+          <summary>プロンプトがうまく書けません。コツはありますか？</summary>
+          <p class="faq-a">「役割・目的・条件・出力形式」の4点を伝える型を使うと安定します。1回で完璧を目指さず、回答に対して「もっと短く」「別案も」と会話で修正していくのが最大のコツです。</p>
+        </details>
+        <details>
+          <summary>AIで作った画像は商用利用できますか？</summary>
+          <p class="faq-a">サービスと契約プランによって異なります。Midjourneyは有料プランで商用利用可、Canvaは規約の範囲内で可、など条件が分かれます。収益化の前に必ず各サービスの利用規約を確認してください。</p>
+        </details>
+        <details>
+          <summary>プログラミング未経験でもAIでアプリを作れますか？</summary>
+          <p class="faq-a">作れます。v0やBoltは日本語の指示だけでWebアプリを生成でき、公開まで可能です。まずは自分が使う小さな道具から作るのがおすすめです。</p>
+        </details>
+        <details>
+          <summary>AIで書いた記事をnoteに投稿してもいいですか？</summary>
+          <p class="faq-a">AIの利用自体は問題ありませんが、AI出力をそのまま貼っただけの記事は評価されにくいです。構成・校正にAIを使い、体験談や意見は自分で書く分業スタイルをおすすめします。</p>
+        </details>
+      </section>
+
+      <aside class="next-read">
+        <span class="next-label">次に読む</span>
+        <a href="business.html">実業務編：メール・議事録・資料作成——毎日の仕事を1時間短縮する →</a>
+        <p>覚えたスキルを仕事に活かしましょう。職場ですぐ使える時短ツールと、会社で使うときの注意点を解説します。</p>
+      </aside>
+
+    </div>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <nav class="footer-nav" aria-label="フッターナビゲーション">
+      <ul>
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="start.html">AI入門編（AIの始め方）</a></li>
+        <li><a href="basics.html">基礎知識（プロンプト・Skillsとは）</a></li>
+        <li><a href="howto.html">AI応用編（各AIの使い方）</a></li>
+        <li><a href="business.html">実業務編（業務効率化）</a></li>
+        <li><a href="sidejob.html">副業編（AI副業の始め方）</a></li>
+      </ul>
+    </nav>
+    <p class="footer-note">※本サイトの情報は執筆時点のものです。各ツールの料金・機能は変更される場合があるため、利用前に公式サイトでご確認ください。</p>
+    <p class="copyright">© 2026 DEMI AI STUDIO</p>
+  </div>
+</footer>
+
+</body>
+</html>

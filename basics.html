@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI基礎知識｜プロンプトとは？Skills（スキル）とは？を初心者向けに解説 | DEMI AI STUDIO</title>
+<meta name="description" content="AIでよく聞く「プロンプト」と「Skills（スキル）」を初心者向けにやさしく解説。プロンプトの意味と良い書き方の基本、AIに手順書を持たせるSkillsの仕組みと使いどころを、具体例つきで紹介します。">
+<link rel="canonical" href="https://supadondada.github.io/demi-ai-studio/basics.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DEMI AI STUDIO">
+<meta property="og:title" content="AI基礎知識｜プロンプトとは？Skills（スキル）とは？を初心者向けに解説">
+<meta property="og:description" content="「プロンプト」と「Skills（スキル）」の意味・違い・使いどころを、初心者向けに具体例つきで解説。">
+<meta property="og:url" content="https://supadondada.github.io/demi-ai-studio/basics.html">
+<meta property="og:image" content="https://supadondada.github.io/demi-ai-studio/ogp.png">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI基礎知識｜プロンプトとは？Skills（スキル）とは？を初心者向けに解説">
+<meta name="twitter:description" content="「プロンプト」と「Skills（スキル）」の意味・違い・使いどころを初心者向けに解説。">
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "AI基礎知識｜プロンプトとは？Skills（スキル）とは？を初心者向けに解説",
+  "description": "AI用語「プロンプト」と「Skills（スキル）」の意味・違い・使いどころを初心者向けに解説",
+  "inLanguage": "ja",
+  "mainEntityOfPage": "https://supadondada.github.io/demi-ai-studio/basics.html",
+  "author": { "@type": "Organization", "name": "DEMI AI STUDIO" },
+  "publisher": { "@type": "Organization", "name": "DEMI AI STUDIO" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://supadondada.github.io/demi-ai-studio/" },
+    { "@type": "ListItem", "position": 2, "name": "AI基礎知識（用語解説）", "item": "https://supadondada.github.io/demi-ai-studio/basics.html" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "プロンプトとは何ですか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "プロンプトとは、AIに送る指示文・質問文のことです。「メールを書いて」のような一言もプロンプトですが、役割・目的・条件・出力形式を含めて具体的に書くほど、AIの回答の質は大きく向上します。" }
+    },
+    {
+      "@type": "Question",
+      "name": "Skills（スキル）とは何ですか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "Skillsとは、特定の作業のやり方をまとめた「手順書」をAIに持たせておく仕組みです。Anthropic社のClaudeに搭載されている機能が代表例で、資料作成や定型業務などをスキルとして登録しておくと、毎回細かく指示しなくても安定した品質で作業してくれます。" }
+    },
+    {
+      "@type": "Question",
+      "name": "プロンプトとSkillsの違いは何ですか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "プロンプトは「その場での指示」、Skillsは「使い回せる手順書」です。毎回同じ説明を打ち込むのがプロンプト、一度登録すれば必要なときにAIが自動で参照するのがSkills、と覚えると分かりやすいです。" }
+    },
+    {
+      "@type": "Question",
+      "name": "初心者もSkillsを使えますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "使えます。ClaudeにはExcelやPowerPointの資料作成など公式の既製スキルが用意されており、有効にするだけで使えます。自作する場合も特別なプログラミングは不要で、日本語で書いた手順書を登録するイメージです。" }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">DEMI <span>AI</span> STUDIO</a>
+    <nav class="global-nav" aria-label="グローバルナビゲーション">
+      <ul>
+        <li><a href="start.html">AI入門編</a></li>
+        <li><a href="basics.html" aria-current="page">基礎知識</a></li>
+        <li><a href="howto.html">AI応用編</a></li>
+        <li><a href="business.html">実業務編</a></li>
+        <li><a href="sidejob.html">副業編</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<nav class="breadcrumb" aria-label="パンくずリスト">
+  <ol>
+    <li><a href="index.html">ホーム</a></li>
+    <li>AI基礎知識（用語解説）</li>
+  </ol>
+</nav>
+
+<main>
+  <article>
+    <div class="hero">
+      <p class="hero-label">基礎知識｜用語解説</p>
+      <h1>「プロンプト」と「Skills」とは？<br>AIの基本用語をやさしく解説</h1>
+      <div class="hero-visual" role="img" aria-label="開いた本と吹き出しで、AI用語を学ぶことを表したイラスト">
+        <svg viewBox="0 0 560 210" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M 90 60 Q 170 40 250 60 L 250 170 Q 170 150 90 170 Z" fill="#eef3ff"/>
+          <path d="M 250 60 Q 330 40 410 60 L 410 170 Q 330 150 250 170 Z" fill="#d9e4ff"/>
+          <line x1="250" y1="60" x2="250" y2="170" stroke="#2b5aed" stroke-width="3"/>
+          <line x1="115" y1="85" x2="225" y2="72" stroke="#a9c0fa" stroke-width="4" stroke-linecap="round"/>
+          <line x1="115" y1="105" x2="225" y2="92" stroke="#a9c0fa" stroke-width="4" stroke-linecap="round"/>
+          <line x1="115" y1="125" x2="200" y2="114" stroke="#a9c0fa" stroke-width="4" stroke-linecap="round"/>
+          <line x1="275" y1="72" x2="385" y2="85" stroke="#2b5aed" stroke-width="4" stroke-linecap="round"/>
+          <line x1="275" y1="92" x2="385" y2="105" stroke="#2b5aed" stroke-width="4" stroke-linecap="round"/>
+          <line x1="275" y1="114" x2="360" y2="125" stroke="#2b5aed" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="460" cy="70 " r="34" fill="#2b5aed"/>
+          <text x="460" y="79" font-size="20" font-weight="bold" fill="#ffffff" text-anchor="middle">？</text>
+          <path d="M 440 96 L 425 112" stroke="#2b5aed" stroke-width="6" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <p class="lead">AIの解説でかならず出てくる2つの言葉、<strong>「プロンプト」</strong>と<strong>「Skills（スキル）」</strong>。この2つの意味と違いが分かると、AIのニュースも使い方の説明もぐっと理解しやすくなります。どちらも例え話と具体例でやさしく解説します。</p>
+    </div>
+
+    <div class="content">
+
+      <nav class="anchor-nav" aria-label="ページ内ナビゲーション">
+        <ul>
+          <li><a href="#prompt">① プロンプトとは？</a></li>
+          <li><a href="#skills">② Skills（スキル）とは？</a></li>
+          <li><a href="#difference">③ 2つの違いと使い分け</a></li>
+        </ul>
+      </nav>
+
+      <section class="section" aria-labelledby="prompt">
+        <h2 id="prompt">① プロンプトとは？ — AIへの「指示文」のこと</h2>
+        <p><strong>プロンプト（prompt）とは、AIに送る指示文・質問文のこと</strong>です。チャット画面の入力欄に打ち込む文章、あれがすべてプロンプトです。英語の prompt には「促す」という意味があり、「AIの動きを促す言葉」と考えると覚えやすいでしょう。</p>
+
+        <h3>例え話：AIは「超優秀だけど、あなたの事情を何も知らない新人」</h3>
+        <p>AIは膨大な知識を持っていますが、<em>あなたが誰で、何のために、どんな答えを求めているのかは知りません</em>。だから指示（プロンプト）が曖昧だと、当たり障りのない答えしか返せないのです。逆に、事情をきちんと伝えれば見違えるような仕事をしてくれます。</p>
+
+        <div class="good-bad">
+          <div class="prompt-box bad">
+            <span class="prompt-label">✕ 曖昧なプロンプト</span>
+            <code>おすすめの本を教えて</code>
+            <p style="margin-top:10px; font-size:0.88rem; color:#5a6272;">誰向けか・ジャンルは何か不明なので、ベストセラーの羅列が返ってくるだけ。</p>
+          </div>
+          <div class="prompt-box">
+            <span class="prompt-label">◎ 具体的なプロンプト</span>
+            <code>読書が苦手な40代会社員です。通勤の20分で少しずつ読める、仕事のモチベーションが上がる本を3冊、選んだ理由つきで教えてください。</code>
+          </div>
+        </div>
+
+        <h3>良いプロンプトの基本形</h3>
+        <p>難しく考える必要はありません。<strong>「役割・目的・条件・出力形式」の4点</strong>を入れるだけで、回答の質は劇的に変わります。</p>
+        <div class="prompt-box">
+          <span class="prompt-label">4点セットのテンプレート</span>
+          <code>あなたは【役割：プロの栄養士】です。
+【目的：平日の夕食の献立を考えたい】
+条件：
+・【家族構成：大人2人、子ども1人（5歳）】
+・【調理時間：30分以内】
+出力形式：【月〜金の5日分を表で】</code>
+        </div>
+        <div class="note-box">
+          <strong>ポイント：</strong>プロンプトは1回で完璧を目指すものではありません。AIの答えに対して「もっと短く」「和食中心にして」と<em>会話で直していくのが正しい使い方</em>です。詳しい書き方のコツは<a href="howto.html#prompt">AI応用編のプロンプト講座</a>で解説しています。
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="skills">
+        <h2 id="skills">② Skills（スキル）とは？ — AIに持たせる「業務マニュアル」</h2>
+        <p><strong>Skills（スキル）とは、特定の作業のやり方をまとめた「手順書」をAIに持たせておく仕組み</strong>です。AnthropicのAI「Claude」に搭載されている機能が代表例で、2025年頃から急速に注目されているキーワードです。</p>
+
+        <h3>例え話：新人アシスタントに渡す「業務マニュアル」</h3>
+        <p>優秀な新人でも、あなたの会社の資料の作り方や独自ルールまでは知りません。そこで「うちの見積書はこの形式で、この順番で作る」というマニュアルを渡しておけば、毎回説明しなくても正しく仕事をしてくれますよね。<em>そのマニュアルにあたるのがSkillsです</em>。AIは作業の内容に応じて、必要なスキル（手順書）を自動で開いて参照します。</p>
+
+        <h3>Skillsでできることの例</h3>
+        <ul>
+          <li><strong>資料作成の型を覚えさせる</strong> — ExcelやPowerPoint、Word文書の作り方を収めた公式スキルがあり、「売上表を作って」だけで整った形式のファイルを出力</li>
+          <li><strong>自社ルールを守らせる</strong> — 「請求書はこの項目順」「報告書はこのフォーマット」など、会社独自の手順を登録</li>
+          <li><strong>繰り返し作業を安定させる</strong> — 毎週のレポート作成など、同じ作業を毎回同じ品質でこなさせる</li>
+        </ul>
+
+        <h3>どこで使えるの？</h3>
+        <ul>
+          <li><strong>Claude（クロード）</strong> — 有料プランの設定画面からスキルを有効化して使えます。開発者向けの「Claude Code」では自作スキルも追加可能</li>
+          <li><strong>ChatGPTの類似機能</strong> — 「GPTs（カスタムGPT）」や「カスタム指示」が近い存在。あらかじめ役割や手順を仕込んだ専用AIを作れます</li>
+        </ul>
+        <div class="note-box">
+          <strong>初心者へのおすすめ：</strong>まずは既製のスキル（Excel・PowerPoint作成など）を有効にして便利さを体感するのが第一歩。自作は「毎回同じ説明をAIにしているな」と感じたときに検討すれば十分です。作り方も特別なプログラミングは不要で、<em>日本語の手順書を登録するイメージ</em>です。
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="difference">
+        <h2 id="difference">③ プロンプトとSkillsの違い — 「その場の指示」か「使い回す手順書」か</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th></th><th>プロンプト</th><th>Skills（スキル）</th></tr>
+            </thead>
+            <tbody>
+              <tr><th>正体</th><td>その場でAIに送る指示文</td><td>あらかじめ登録しておく手順書</td></tr>
+              <tr><th>例えるなら</th><td>口頭での仕事の依頼</td><td>業務マニュアル</td></tr>
+              <tr><th>向いている場面</th><td>一回きりの質問・依頼</td><td>何度も繰り返す定型作業</td></tr>
+              <tr><th>準備</th><td>不要（打つだけ）</td><td>最初に一度だけ登録</td></tr>
+              <tr><th>まず覚えるべき？</th><td>◎ 全AI操作の基本</td><td>○ 慣れてきたら</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>関係性をひとことで言うと、<em>「プロンプトで毎回説明していたことを、Skillsに保存して自動化する」</em>という流れです。まずはプロンプトを使いこなせるようになるのが先。その先の効率化としてSkillsがある、と覚えてください。</p>
+        <p>プロンプトの実践的な書き方は<a href="howto.html#prompt">AI応用編</a>で、仕事での活用は<a href="business.html">実業務編</a>で詳しく解説しています。</p>
+      </section>
+
+      <section class="section faq" aria-labelledby="faq">
+        <h2 id="faq">よくある質問</h2>
+        <details>
+          <summary>プロンプトとは何ですか？</summary>
+          <p class="faq-a">AIに送る指示文・質問文のことです。「メールを書いて」のような一言もプロンプトですが、役割・目的・条件・出力形式を含めて具体的に書くほど、AIの回答の質は大きく向上します。</p>
+        </details>
+        <details>
+          <summary>Skills（スキル）とは何ですか？</summary>
+          <p class="faq-a">特定の作業のやり方をまとめた「手順書」をAIに持たせておく仕組みです。Claudeの機能が代表例で、資料作成や定型業務をスキルとして登録すると、毎回細かく指示しなくても安定した品質で作業してくれます。</p>
+        </details>
+        <details>
+          <summary>プロンプトとSkillsの違いは何ですか？</summary>
+          <p class="faq-a">プロンプトは「その場での指示」、Skillsは「使い回せる手順書」です。毎回同じ説明を打ち込むのがプロンプト、一度登録すればAIが必要なときに自動で参照するのがSkillsです。</p>
+        </details>
+        <details>
+          <summary>初心者もSkillsを使えますか？</summary>
+          <p class="faq-a">使えます。ClaudeにはExcelやPowerPoint資料作成などの既製スキルが用意されており、有効にするだけで使えます。自作する場合もプログラミングは不要で、日本語で書いた手順書を登録するイメージです。</p>
+        </details>
+      </section>
+
+      <aside class="next-read">
+        <span class="next-label">次に読む</span>
+        <a href="howto.html">AI応用編：プロンプトの型を身につけて、画像生成・アプリ開発まで →</a>
+        <p>用語が分かったら、次は実践です。回答の質が劇的に変わる「プロンプトの4点セット」を実例つきで練習しましょう。</p>
+      </aside>
+
+    </div>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <nav class="footer-nav" aria-label="フッターナビゲーション">
+      <ul>
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="start.html">AI入門編（AIの始め方）</a></li>
+        <li><a href="basics.html">基礎知識（プロンプト・Skillsとは）</a></li>
+        <li><a href="howto.html">AI応用編（各AIの使い方）</a></li>
+        <li><a href="business.html">実業務編（業務効率化）</a></li>
+        <li><a href="sidejob.html">副業編（AI副業の始め方）</a></li>
+      </ul>
+    </nav>
+    <p class="footer-note">※本サイトの情報は執筆時点のものです。各ツールの料金・機能は変更される場合があるため、利用前に公式サイトでご確認ください。</p>
+    <p class="copyright">© 2026 DEMI AI STUDIO</p>
+  </div>
+</footer>
+
+</body>
+</html>

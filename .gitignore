@@ -1,0 +1,5 @@
+deploy/
+*.zip
+DESIGN.md
+.netlify/
+.claude/
