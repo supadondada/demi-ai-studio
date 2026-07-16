@@ -3,27 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI基礎知識｜プロンプトとは？Skills（スキル）とは？を初心者向けに解説 | DEMI AI STUDIO</title>
-<meta name="description" content="AIでよく聞く「プロンプト」と「Skills（スキル）」を初心者向けにやさしく解説。プロンプトの意味と良い書き方の基本、AIに手順書を持たせるSkillsの仕組みと使いどころを、具体例つきで紹介します。">
+<title>AI用語をやさしく解説｜プロンプト・Skills・ハルシネーションとは？ | DEMI AI STUDIO</title>
+<meta name="description" content="AI初心者向けの用語解説。プロンプトとSkills（スキル）の意味と違い、AIが嘘をつくハルシネーションの原因と対策、モデル・トークン・AIエージェントなど、記事を読むのに必要な用語だけを例え話でやさしく解説します。">
 <link rel="canonical" href="https://supadondada.github.io/demi-ai-studio/basics.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="DEMI AI STUDIO">
-<meta property="og:title" content="AI基礎知識｜プロンプトとは？Skills（スキル）とは？を初心者向けに解説">
-<meta property="og:description" content="「プロンプト」と「Skills（スキル）」の意味・違い・使いどころを、初心者向けに具体例つきで解説。">
+<meta property="og:title" content="AI用語をやさしく解説｜プロンプト・Skills・ハルシネーションとは？">
+<meta property="og:description" content="プロンプト・Skills・ハルシネーション・モデルなど、AI初心者に必要な用語だけを例え話でやさしく解説。">
 <meta property="og:url" content="https://supadondada.github.io/demi-ai-studio/basics.html">
 <meta property="og:image" content="https://supadondada.github.io/demi-ai-studio/ogp.png">
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="AI基礎知識｜プロンプトとは？Skills（スキル）とは？を初心者向けに解説">
-<meta name="twitter:description" content="「プロンプト」と「Skills（スキル）」の意味・違い・使いどころを初心者向けに解説。">
+<meta name="twitter:title" content="AI用語をやさしく解説｜プロンプト・Skills・ハルシネーションとは？">
+<meta name="twitter:description" content="プロンプト・Skills・ハルシネーション・モデルなど、AI初心者に必要な用語だけをやさしく解説。">
 <link rel="stylesheet" href="style.css">
 <script src="script.js" defer></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "AI基礎知識｜プロンプトとは？Skills（スキル）とは？を初心者向けに解説",
-  "description": "AI用語「プロンプト」と「Skills（スキル）」の意味・違い・使いどころを初心者向けに解説",
+  "headline": "AI用語をやさしく解説｜プロンプト・Skills・ハルシネーションとは？",
+  "description": "プロンプト・Skills・ハルシネーション・モデル・トークン・AIエージェントなどAI用語を初心者向けに解説",
   "inLanguage": "ja",
   "mainEntityOfPage": "https://supadondada.github.io/demi-ai-studio/basics.html",
   "author": { "@type": "Organization", "name": "DEMI AI STUDIO" },
@@ -64,6 +64,16 @@
       "@type": "Question",
       "name": "初心者もSkillsを使えますか？",
       "acceptedAnswer": { "@type": "Answer", "text": "使えます。ClaudeにはExcelやPowerPointの資料作成など公式の既製スキルが用意されており、有効にするだけで使えます。自作する場合も特別なプログラミングは不要で、日本語で書いた手順書を登録するイメージです。" }
+    },
+    {
+      "@type": "Question",
+      "name": "ハルシネーションとは何ですか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "AIが事実でないことを、もっともらしく答えてしまう現象です。AIは事実を調べているのではなく「次に来る自然な言葉」を予測しているために起こります。数字・日付・人名・URLは特に間違いやすいので、出典を聞く、検索機能つきのAIを使う、重要な情報は自分で裏取りする、の3点で対策してください。" }
+    },
+    {
+      "@type": "Question",
+      "name": "AIの「モデル」とは何ですか？覚える必要はありますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "モデルとはAIの頭脳そのもののことです。ChatGPTやClaudeがサービス名（アプリ）で、その中で動く頭脳がモデルにあたります。モデル名は数ヶ月単位で新しくなるため、名前を覚える必要はありません。迷ったら初期設定のまま使えば十分です。" }
     }
   ]
 }
@@ -81,6 +91,7 @@
         <li><a href="howto.html">AI応用編</a></li>
         <li><a href="business.html">実業務編</a></li>
         <li><a href="sidejob.html">副業編</a></li>
+        <li><a href="cookbook.html">番外編</a></li>
       </ul>
     </nav>
   </div>
@@ -96,8 +107,8 @@
 <main>
   <article>
     <div class="hero">
-      <p class="hero-label">基礎知識｜用語解説</p>
-      <h1>「プロンプト」と「Skills」とは？<br>AIの基本用語をやさしく解説</h1>
+      <p class="hero-label">STEP 2｜基礎知識</p>
+      <h1>AIの基本用語をやさしく解説<br>プロンプト・Skills・ハルシネーション</h1>
       <div class="hero-visual" role="img" aria-label="開いた本と吹き出しで、AI用語を学ぶことを表したイラスト">
         <svg viewBox="0 0 560 210" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path d="M 90 60 Q 170 40 250 60 L 250 170 Q 170 150 90 170 Z" fill="#eef3ff"/>
@@ -114,7 +125,7 @@
           <path d="M 440 96 L 425 112" stroke="#2b5aed" stroke-width="6" stroke-linecap="round"/>
         </svg>
       </div>
-      <p class="lead">AIの解説でかならず出てくる2つの言葉、<strong>「プロンプト」</strong>と<strong>「Skills（スキル）」</strong>。この2つの意味と違いが分かると、AIのニュースも使い方の説明もぐっと理解しやすくなります。どちらも例え話と具体例でやさしく解説します。</p>
+      <p class="lead">AIの解説でかならず出てくる用語を、<strong>初心者に必要な範囲だけ</strong>例え話でやさしく解説します。まずは基本の<strong>「プロンプト」</strong>と<strong>「Skills（スキル）」</strong>から。最後に、AIを使ううえで最重要の<strong>「ハルシネーション」</strong>など、記事を読むのに必要な用語をまとめています。</p>
     </div>
 
     <div class="content">
@@ -124,6 +135,7 @@
           <li><a href="#prompt">① プロンプトとは？</a></li>
           <li><a href="#skills">② Skills（スキル）とは？</a></li>
           <li><a href="#difference">③ 2つの違いと使い分け</a></li>
+          <li><a href="#glossary">④ その他の重要用語</a></li>
         </ul>
       </nav>
 
@@ -206,6 +218,79 @@
         <p>プロンプトの実践的な書き方は<a href="howto.html#prompt">AI応用編</a>で、仕事での活用は<a href="business.html">実業務編</a>で詳しく解説しています。</p>
       </section>
 
+      <section class="section" aria-labelledby="glossary">
+        <h2 id="glossary">④ その他の重要用語 — これだけ知れば記事が読める</h2>
+        <p>AIの解説記事やニュースで頻出する用語を、初心者に必要な範囲だけ集めました。<strong>すべて覚える必要はありません</strong>。「聞いたことがある」程度で十分です。</p>
+
+        <h3 id="hallucination">ハルシネーション — AIがつく「もっともらしい嘘」</h3>
+        <p><strong>ハルシネーション（hallucination／幻覚）とは、AIが事実でないことを、いかにも本当らしく答えてしまう現象</strong>のことです。AIを使ううえで<em>最も重要な注意点</em>なので、これだけは必ず覚えてください。</p>
+        <h4>なぜ起きるの？</h4>
+        <p>AIは「事実を調べて答えている」のではなく、<strong>「次に来る自然な言葉」を予測して文章を作っている</strong>からです。人間で言えば、うろ覚えの知識で自信満々に話してしまう状態に近く、悪意があるわけではありません。だから<em>知らないことでも、それらしい答えを作ってしまう</em>のです。</p>
+        <h4>とくに危ないケース</h4>
+        <ul>
+          <li><strong>数字・日付・統計</strong> — 「2024年の市場規模は◯◯億円」のような具体的な数値ほど要注意</li>
+          <li><strong>人名・書名・URL</strong> — 存在しない書籍や論文、リンク切れのURLを堂々と挙げることがあります</li>
+          <li><strong>法律・医療・税金</strong> — 古い情報や他国の制度が混ざることがあり、鵜呑みは危険です</li>
+          <li><strong>ニッチな話題</strong> — 学習データが少ない分野ほど、間違いが増えます</li>
+        </ul>
+        <h4>対策3つ</h4>
+        <ol class="steps">
+          <li><span class="step-title">出典を聞く</span><p>「その情報の出典（URL）も教えて」と続けて質問する。出せない・怪しいリンクを出す場合は、その内容を疑ってください。</p></li>
+          <li><span class="step-title">検索機能つきのAIを使う</span><p>Perplexityや、ChatGPT・Geminiの検索モードは、実際にWebを見て出典リンク付きで答えるためハルシネーションが起きにくくなります（→ <a href="business.html#research">実業務編のリサーチ</a>）。</p></li>
+          <li><span class="step-title">重要な情報は必ず自分で裏取り</span><p>資料や納品物に使う数字・固有名詞は、公式サイトで確認してから使う。<em>最終確認は人間の仕事</em>です。</p></li>
+        </ol>
+
+        <h3 id="model">モデル — AIの「頭脳」の種類と世代</h3>
+        <p><strong>モデルとは、AIの頭脳そのもの</strong>のこと。ChatGPTやClaudeは"サービス名（アプリの名前）"で、その中で動いている頭脳が"モデル"です。<em>車で言えば、車種名がサービス、エンジンがモデル</em>にあたります。</p>
+        <div class="table-wrap">
+          <table>
+            <caption style="text-align:left; font-size:0.85rem; color:#5a6272; margin-bottom:8px;">サービスとモデルの関係（モデル名は世代交代で頻繁に変わります）</caption>
+            <thead>
+              <tr><th>サービス名（アプリ）</th><th>中で動くモデルの例</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>ChatGPT</td><td>GPT系のモデル</td></tr>
+              <tr><td>Claude</td><td>Claude系のモデル（Opus・Sonnet・Haiku など）</td></tr>
+              <tr><td>Gemini</td><td>Gemini系のモデル</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>同じサービスでも<strong>複数のモデルを選べる</strong>ことが多く、一般に次の傾向があります。</p>
+        <ul>
+          <li><strong>高性能モデル</strong> — 賢いが、動作が遅め・無料プランでは使用回数に制限。難しい相談や長文の分析向き</li>
+          <li><strong>軽量モデル</strong> — 速くて回数制限がゆるい。簡単な質問や要約向き</li>
+        </ul>
+        <div class="note-box">
+          <strong>初心者へのアドバイス：</strong>モデル名は数ヶ月単位で新しくなるため、<em>名前を覚える必要はまったくありません</em>。「迷ったら初期設定のまま使う」「物足りなければ画面上部のメニューから上位モデルに切り替えてみる」で十分です。有料プランの価値は、この高性能モデルをたくさん使える点にあります（→ <a href="start.html#sec5">入門編の料金比較</a>）。
+        </div>
+
+        <h3 id="genai">生成AI・LLM — 今話題のAIの正体</h3>
+        <ul>
+          <li><strong>生成AI（ジェネレーティブAI）</strong> — 文章・画像・動画などを"新しく作り出す"AIの総称。このサイトで「AI」と呼んでいるものは、ほぼこれです。</li>
+          <li><strong>LLM（大規模言語モデル）</strong> — Large Language Modelの略。生成AIのうち<strong>言葉を扱うもの</strong>の技術名です。ChatGPTやClaudeの頭脳はLLMです。</li>
+          <li><strong>マルチモーダル</strong> — 文章だけでなく<strong>画像・音声・動画もまとめて扱える</strong>という意味。スマホで撮った写真を見せて「これ何？」と聞けるのは、この性質のおかげです。</li>
+        </ul>
+
+        <h3 id="token">トークン・コンテキストウィンドウ — AIの「記憶の限界」</h3>
+        <ul>
+          <li><strong>トークン</strong> — AIが文章を処理するときの<strong>文字のかたまりの単位</strong>。日本語ではおおよそ1文字＝1トークン前後が目安です。</li>
+          <li><strong>コンテキストウィンドウ</strong> — AIが<strong>一度に読める量の上限</strong>。これを超えると、会話の最初のほうの内容を忘れていきます。</li>
+        </ul>
+        <div class="note-box">
+          <strong>実用上のポイント：</strong>長い会話を続けると、AIが最初の指示を忘れることがあります。そんなときは<em>新しいチャットを開いて、必要な情報を貼り直す</em>のが確実です。「なんだか話が噛み合わなくなってきた」と感じたら、それは会話が長くなりすぎたサインです。
+        </div>
+
+        <h3 id="agent">AIエージェント — 自分で考えて作業するAI</h3>
+        <p><strong>AIエージェントとは、指示に対して自分で手順を考え、複数の作業を実行してくれるAI</strong>のことです。従来の対話AIが「質問に答える」だけだったのに対し、エージェントは<em>「やっておいて」に応えてくれる</em>のが違いです。</p>
+        <p>たとえば「競合3社を調べて比較表にして」と頼むと、Webを検索し、情報を整理し、表を作るところまで自動でこなします。<a href="howto.html#dev">応用編で紹介したClaude Code</a>（このサイトを作ったツール）も、開発作業を自律的に進めるAIエージェントの一種です。</p>
+
+        <h3 id="api">API — アプリ同士をつなぐ「窓口」</h3>
+        <p><strong>API（エーピーアイ）とは、他のアプリやサービスからAIを呼び出すための窓口</strong>のこと。開発者向けの仕組みなので、<em>普通に使う分には知らなくて大丈夫</em>です。「自社システムにAIを組み込む」といった話題で出てきたら、この意味だと思ってください。</p>
+
+        <h3 id="optout">学習利用のオプトアウト — 入力内容を学習させない設定</h3>
+        <p><strong>オプトアウトとは、自分が入力した内容をAIの学習に使わせない設定にすること</strong>です。ChatGPT・Claude・Geminiのいずれも設定画面から変更できます。仕事の情報を扱うなら必ずオフにしましょう（→ <a href="business.html#rules">実業務編の情報漏えい対策</a>）。</p>
+      </section>
+
       <section class="section faq" aria-labelledby="faq">
         <h2 id="faq">よくある質問</h2>
         <details>
@@ -223,6 +308,14 @@
         <details>
           <summary>初心者もSkillsを使えますか？</summary>
           <p class="faq-a">使えます。ClaudeにはExcelやPowerPoint資料作成などの既製スキルが用意されており、有効にするだけで使えます。自作する場合もプログラミングは不要で、日本語で書いた手順書を登録するイメージです。</p>
+        </details>
+        <details>
+          <summary>ハルシネーションとは何ですか？</summary>
+          <p class="faq-a">AIが事実でないことを、もっともらしく答えてしまう現象です。AIは事実を調べているのではなく「次に来る自然な言葉」を予測しているために起こります。数字・日付・人名・URLは特に間違いやすいので、出典を聞く、検索機能つきのAIを使う、重要な情報は自分で裏取りする、の3点で対策してください。</p>
+        </details>
+        <details>
+          <summary>AIの「モデル」とは何ですか？覚える必要はありますか？</summary>
+          <p class="faq-a">モデルとはAIの頭脳そのもののことです。ChatGPTやClaudeがサービス名（アプリ）で、その中で動く頭脳がモデルにあたります。モデル名は数ヶ月単位で新しくなるため、名前を覚える必要はありません。迷ったら初期設定のまま使えば十分です。</p>
         </details>
       </section>
 
@@ -246,6 +339,7 @@
         <li><a href="howto.html">AI応用編（各AIの使い方）</a></li>
         <li><a href="business.html">実業務編（業務効率化）</a></li>
         <li><a href="sidejob.html">副業編（AI副業の始め方）</a></li>
+        <li><a href="cookbook.html">番外編（Claude Cookbookの使い方）</a></li>
       </ul>
     </nav>
     <p class="footer-note">※本サイトの情報は執筆時点のものです。各ツールの料金・機能は変更される場合があるため、利用前に公式サイトでご確認ください。</p>

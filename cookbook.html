@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>番外編｜Claude Cookbookとは？中身と使い方をやさしく解説 | DEMI AI STUDIO</title>
+<meta name="description" content="Anthropic公式の「Claude Cookbook」を初心者向けに解説。何が入っているのか、誰向けなのか、Jupyter NotebookやAPIキーといった前提条件、そして無理なく始めるための順番（公式コース→Cookbook）まで、正直に紹介します。">
+<link rel="canonical" href="https://supadondada.github.io/demi-ai-studio/cookbook.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DEMI AI STUDIO">
+<meta property="og:title" content="番外編｜Claude Cookbookとは？中身と使い方をやさしく解説">
+<meta property="og:description" content="Anthropic公式のCookbookは何者か、誰向けか、何が必要か。初心者が挫折しないための正しい順番を解説。">
+<meta property="og:url" content="https://supadondada.github.io/demi-ai-studio/cookbook.html">
+<meta property="og:image" content="https://supadondada.github.io/demi-ai-studio/ogp.png">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="番外編｜Claude Cookbookとは？中身と使い方をやさしく解説">
+<meta name="twitter:description" content="Anthropic公式のCookbookは何者か、誰向けか、何が必要か。初心者向けに正直に解説。">
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "番外編｜Claude Cookbookとは？中身と使い方をやさしく解説",
+  "description": "Anthropic公式のClaude Cookbookの中身、前提条件、初心者が始めるための順番を解説",
+  "inLanguage": "ja",
+  "mainEntityOfPage": "https://supadondada.github.io/demi-ai-studio/cookbook.html",
+  "author": { "@type": "Organization", "name": "DEMI AI STUDIO" },
+  "publisher": { "@type": "Organization", "name": "DEMI AI STUDIO" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://supadondada.github.io/demi-ai-studio/" },
+    { "@type": "ListItem", "position": 2, "name": "番外編（Claude Cookbookの使い方）", "item": "https://supadondada.github.io/demi-ai-studio/cookbook.html" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Claude Cookbookとは何ですか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "Anthropicが公式に公開している、Claudeの実践的な使い方をまとめたサンプル集です。GitHubで無料公開されており、「Claudeを使って分類する」「PDFを要約する」といったテーマごとに、動かせるコードが1本ずつ入っています。ただし中身のほとんどはJupyter Notebook形式のプログラムで、開発者向けの資料です。" }
+    },
+    {
+      "@type": "Question",
+      "name": "Cookbookを使うのにプログラミングは必要ですか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "必要です。Cookbookのファイルの9割以上はPythonのJupyter Notebookで、動かすにはPythonの実行環境とAPIキーが要ります。プログラミングをしない方は、無理に開く必要はありません。ChatGPTやClaudeの通常画面を使いこなす方が先です。" }
+    },
+    {
+      "@type": "Question",
+      "name": "APIキーとは何ですか？無料ですか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "APIキーとは、プログラムからAIを呼び出すためのパスワードのような文字列です。Anthropicのサイトで無料登録して取得できますが、実際にプログラムからAIを動かすと使った分だけ料金がかかる従量課金制です。通常のチャット画面の月額プランとは別の料金体系なので注意してください。" }
+    },
+    {
+      "@type": "Question",
+      "name": "Cookbookはどこから始めればいいですか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "Cookbook自身が「先にAPI Fundamentalsコースを見てほしい」と案内しています。Anthropicは学習用に別途コース集（anthropics/courses）を公開しており、API入門→プロンプトエンジニアリング→実践プロンプト→評価→ツール活用という推奨順があります。Cookbookはその後に開く「逆引き辞典」と考えるのが正解です。" }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">DEMI <span>AI</span> STUDIO</a>
+    <nav class="global-nav" aria-label="グローバルナビゲーション">
+      <ul>
+        <li><a href="start.html">AI入門編</a></li>
+        <li><a href="basics.html">基礎知識</a></li>
+        <li><a href="howto.html">AI応用編</a></li>
+        <li><a href="business.html">実業務編</a></li>
+        <li><a href="sidejob.html">副業編</a></li>
+        <li><a href="cookbook.html" aria-current="page">番外編</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<nav class="breadcrumb" aria-label="パンくずリスト">
+  <ol>
+    <li><a href="index.html">ホーム</a></li>
+    <li>番外編（Claude Cookbookの使い方）</li>
+  </ol>
+</nav>
+
+<main>
+  <article>
+    <div class="hero">
+      <p class="hero-label">番外編｜一歩先の世界</p>
+      <h1>Claude Cookbookとは？<br>公式レシピ集の中身と使い方</h1>
+      <div class="hero-visual" role="img" aria-label="料理のレシピ本のように、AIの作り方のレシピが並んでいるイメージイラスト">
+        <svg viewBox="0 0 560 210" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="150" y="30" width="260" height="150" rx="12" fill="#eef3ff"/>
+          <rect x="150" y="30" width="26" height="150" rx="6" fill="#2b5aed"/>
+          <line x1="196" y1="62" x2="386" y2="62" stroke="#a9c0fa" stroke-width="6" stroke-linecap="round"/>
+          <line x1="196" y1="86" x2="340" y2="86" stroke="#a9c0fa" stroke-width="6" stroke-linecap="round"/>
+          <rect x="196" y="108" width="190" height="54" rx="8" fill="#ffffff" stroke="#2b5aed" stroke-width="2"/>
+          <text x="212" y="142" font-size="17" font-weight="bold" fill="#2b5aed">&lt;/&gt;</text>
+          <line x1="250" y1="127" x2="360" y2="127" stroke="#a9c0fa" stroke-width="5" stroke-linecap="round"/>
+          <line x1="250" y1="143" x2="330" y2="143" stroke="#a9c0fa" stroke-width="5" stroke-linecap="round"/>
+          <circle cx="82" cy="105" r="34" fill="#2b5aed"/>
+          <path d="M 68 105 h 28 M 82 91 v 28" stroke="#ffffff" stroke-width="5" stroke-linecap="round"/>
+          <path d="M 122 105 L 142 105" stroke="#a9c0fa" stroke-width="4" stroke-dasharray="6 6"/>
+          <circle cx="478" cy="105" r="34" fill="none" stroke="#2b5aed" stroke-width="4"/>
+          <path d="M 466 105 l 8 9 l 16 -19" stroke="#2b5aed" stroke-width="4" fill="none" stroke-linecap="round"/>
+          <path d="M 418 105 L 438 105" stroke="#a9c0fa" stroke-width="4" stroke-dasharray="6 6"/>
+        </svg>
+      </div>
+      <p class="lead">AIの情報を追っていると出てくる<strong>「Cookbook（クックブック）」</strong>。名前のとおり<em>料理のレシピ集のようなもの</em>ですが、<strong>これは開発者向けの資料</strong>です。このページでは、それが何者で、誰に必要で、何が要るのかを<strong>包み隠さず</strong>解説します。「自分にはまだ早い」と判断できることも、このページの目的です。</p>
+    </div>
+
+    <div class="content">
+
+      <nav class="anchor-nav" aria-label="ページ内ナビゲーション">
+        <ul>
+          <li><a href="#what">① Cookbookとは？</a></li>
+          <li><a href="#who">② 誰向け？（正直な話）</a></li>
+          <li><a href="#need">③ 必要なもの3つ</a></li>
+          <li><a href="#order">④ 正しい始め方</a></li>
+          <li><a href="#inside">⑤ 中身のカタログ</a></li>
+        </ul>
+      </nav>
+
+      <section class="section" aria-labelledby="what">
+        <h2 id="what">① Claude Cookbookとは？ — 公式の「実例レシピ集」</h2>
+        <p><strong>Claude Cookbookとは、Claudeの開発元であるAnthropicが公式に公開している、実践的な使用例集</strong>です。GitHubというプログラマー向けのサイトで<strong>誰でも無料で閲覧できます</strong>。公式の説明文は次のとおりです。</p>
+        <div class="note-box">
+          「Claudeを使う、楽しく効果的な方法を紹介するノートブック／レシピ集」<br>
+          <span style="font-size:0.85rem; color:#5a6272;">— anthropics/anthropic-cookbook 公式リポジトリの説明より</span>
+        </div>
+
+        <h3>例え話：料理本と同じ構造</h3>
+        <p>料理のレシピ本に「肉じゃがの作り方」「カレーの作り方」が1品ずつ載っているように、Cookbookには<em>「PDFを要約させる方法」「問い合わせを自動分類する方法」「画像を読ませる方法」が1本ずつ、動くコードとして収められています</em>。</p>
+        <p>ゼロから考えるのではなく<strong>「似たレシピを探して、自分用に材料を差し替える」</strong>——これがCookbookの使い方です。</p>
+
+        <div class="note-box warn">
+          <strong>先に言っておきます：</strong>Cookbookの中身は<strong>9割以上がJupyter Notebook形式のPythonプログラム</strong>です。ChatGPTやClaudeのチャット画面のような、開いてすぐ使えるツールではありません。<em>プログラミングをしない方が今すぐ開く必要はまったくありません</em>。次のセクションで、あなたに必要かどうかを判定します。
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="who">
+        <h2 id="who">② 誰向け？ — あなたに必要か判定する</h2>
+        <p>このサイトは初心者向けですが、<strong>Cookbookは正直に言って初心者向けではありません</strong>。無理に勧めることはしません。次の表で自分の立ち位置を確認してください。</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>あなたの状況</th><th>Cookbookは必要？</th><th>代わりに読むべきページ</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>AIを使い始めたばかり</td>
+                <td><strong>不要</strong></td>
+                <td><a href="start.html">AI入門編</a> — まずチャット画面に慣れる</td>
+              </tr>
+              <tr>
+                <td>プロンプトを上手くしたい</td>
+                <td><strong>不要</strong></td>
+                <td><a href="howto.html#prompt">応用編のプロンプト講座</a>で十分</td>
+              </tr>
+              <tr>
+                <td>仕事でAIを時短に使いたい</td>
+                <td><strong>不要</strong></td>
+                <td><a href="business.html">実業務編</a> — 既製ツールで足ります</td>
+              </tr>
+              <tr>
+                <td>AIを組み込んだアプリを作りたい</td>
+                <td>◎ <strong>役立つ</strong></td>
+                <td>このページを読み進めてください</td>
+              </tr>
+              <tr>
+                <td>開発の副業を狙っている</td>
+                <td>○ <strong>武器になる</strong></td>
+                <td><a href="sidejob.html#types">副業編の開発代行</a>と併せて</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="note-box">
+          <strong>大事な考え方：</strong>Cookbookが扱うのは「<em>プログラムからAIを呼び出す</em>」世界の話です。これは<a href="basics.html#api">基礎知識で解説したAPI</a>——アプリ同士をつなぐ窓口——を使う領域。<em>チャット画面でAIを使うのとは別のスキル</em>であり、片方だけでもまったく問題ありません。
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="need">
+        <h2 id="need">③ 必要なもの3つ — 前提条件を正直に</h2>
+        <p>Cookbookのレシピを<strong>実際に動かす</strong>には、公式が挙げている次の3つが必要です。「見るだけ」ならブラウザだけでできます。</p>
+
+        <h3>1. APIキー（無料登録・ただし従量課金）</h3>
+        <p><strong>APIキーとは、プログラムからAIを呼び出すためのパスワードのような文字列</strong>です。Anthropicのサイトで無料登録して取得できます。</p>
+        <div class="note-box warn">
+          <strong>料金の落とし穴：</strong>APIキーの取得自体は無料ですが、<em>プログラムからAIを動かすと、使った分だけ課金される従量課金制</em>です。<strong>チャット画面の月額プラン（約3,000円）とはまったく別の料金体系</strong>で、月額を払っていてもAPI利用分は別請求になります。少額から試せますが、この違いは必ず理解してから始めてください。
+        </div>
+
+        <h3>2. Python（プログラミング言語）</h3>
+        <p>Cookbookのコードはほぼすべて<strong>Python</strong>で書かれています。Python自体は無料で、AIやデータ分析で最も使われている言語です。文法をひととおり知っている必要があります。</p>
+
+        <h3>3. Jupyter Notebook（ノートブック形式の実行環境）</h3>
+        <p>聞き慣れない名前ですが、<strong>「説明文とプログラムを交互に書けて、1ブロックずつ実行して結果を確認できる」ノート</strong>のことです。Cookbookのファイルの<strong>94%</strong>がこの形式（拡張子 `.ipynb`）です。</p>
+        <div class="note-box">
+          <strong>朗報：</strong>Jupyterは自分のPCに入れなくても、<strong>Google Colab（コラボ）</strong>という無料のWebサービスを使えばブラウザだけで動かせます。GitHubのノートブックをColabで開けば、インストール作業をほぼ飛ばせます。
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="order">
+        <h2 id="order">④ 正しい始め方 — Cookbookは「最初に開く場所」ではない</h2>
+        <p>ここが最重要です。<strong>Cookbook自身が、いきなり開かず先に別の資料を見るよう案内しています</strong>。実際、公式の「Prerequisites（前提条件）」欄には <em>「API Fundamentalsコースを見てほしい」</em>と書かれています。</p>
+        <p>Anthropicは<strong>学習用のコース集を別に公開しており（`anthropics/courses`）、推奨順まで示されています</strong>。この順番を無視して先にCookbookを開くのが、挫折の典型パターンです。</p>
+
+        <ol class="steps">
+          <li>
+            <span class="step-title">API Fundamentals（API入門）</span>
+            <p>APIキーの取得、モデルの設定値、画像を含むプロンプト、応答の逐次表示など<strong>基礎の基礎</strong>。ここが出発点です。</p>
+          </li>
+          <li>
+            <span class="step-title">Prompt Engineering Interactive Tutorial（プロンプト対話型講座）</span>
+            <p>プロンプト技術を手を動かしながら学ぶ講座。<a href="howto.html#prompt">応用編で解説した「型」</a>の、より体系的な版です。</p>
+          </li>
+          <li>
+            <span class="step-title">Real World Prompting（実践プロンプト）</span>
+            <p>学んだ技術を、現実の複雑なプロンプトに組み込む方法。</p>
+          </li>
+          <li>
+            <span class="step-title">Prompt Evaluations（プロンプト評価）</span>
+            <p>作ったプロンプトの品質を<em>数値で測る</em>方法。趣味と実務を分ける重要な工程です。</p>
+          </li>
+          <li>
+            <span class="step-title">Tool Use（ツール活用）</span>
+            <p>AIに外部のツールを使わせる方法。<a href="basics.html#agent">基礎知識で触れたAIエージェント</a>の土台になる技術です。</p>
+          </li>
+          <li>
+            <span class="step-title">→ ここでようやくCookbook</span>
+            <p>基礎ができた状態で、<em>「やりたいこと」から逆引きする辞典</em>として使う。これが本来の位置づけです。</p>
+          </li>
+        </ol>
+
+        <div class="note-box">
+          <strong>料理で例えるなら：</strong>包丁の握り方も知らない人がレシピ本を開いても作れません。<em>コース集が「料理教室」、Cookbookが「レシピ本」</em>。教室→レシピ本の順が正解で、逆にすると挫折します。
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="inside">
+        <h2 id="inside">⑤ 中身のカタログ — どんなレシピがあるのか</h2>
+        <p>「自分の作りたいものがあるか」を判断できるよう、実際の分類を紹介します。</p>
+
+        <h3>基本の能力（Capabilities）</h3>
+        <ul>
+          <li><strong>分類（Classification）</strong> — 問い合わせを種類ごとに自動仕分けする</li>
+          <li><strong>RAG（検索拡張生成）</strong> — 自社の資料を読ませて、その内容に基づいて答えさせる</li>
+          <li><strong>要約（Summarization）</strong> — 長文を要点にまとめる</li>
+        </ul>
+
+        <h3>ツール活用・外部連携</h3>
+        <ul>
+          <li><strong>ツール活用</strong> — カスタマーサポート担当AI、電卓との連携、SQL（データベース）への問い合わせ</li>
+          <li><strong>外部サービス連携</strong> — ベクトルデータベース（Pinecone）、Wikipedia、Webページの読み込み、Voyage AIによる埋め込み処理</li>
+        </ul>
+
+        <h3>マルチモーダル（画像を扱う）</h3>
+        <ul>
+          <li><strong>Claudeの画像認識</strong> — 画像の分析、グラフ・図表の読み取り、<em>フォームからの情報抽出</em></li>
+          <li><strong>画像生成</strong> — Stable Diffusionとの連携（→ <a href="howto.html#image">応用編の画像生成</a>）</li>
+        </ul>
+
+        <h3>応用テクニック</h3>
+        <ul>
+          <li><strong>サブエージェント</strong> — AIに補佐役のAIを使わせる</li>
+          <li><strong>PDFのアップロードと要約</strong> — 資料をそのまま読ませる</li>
+          <li><strong>自動評価</strong> — AIの出力品質を自動で採点する</li>
+          <li><strong>JSONモード</strong> — 出力をプログラムで扱える形式に固定する</li>
+          <li><strong>コンテンツモデレーション</strong> — 不適切な内容を検知するフィルタ</li>
+          <li><strong>プロンプトキャッシュ</strong> — 同じ前提文の再利用でコストを削減する</li>
+        </ul>
+
+        <div class="note-box">
+          <strong>眺めるだけでも価値があります：</strong>コードが読めなくても、この一覧を見るだけで<em>「AIってこんなことに使えるのか」という発想の引き出し</em>が増えます。RAGやサブエージェントといった言葉に触れておくだけでも、AIのニュースの解像度が上がります。
+        </div>
+      </section>
+
+      <section class="section faq" aria-labelledby="faq">
+        <h2 id="faq">よくある質問</h2>
+        <details>
+          <summary>Claude Cookbookとは何ですか？</summary>
+          <p class="faq-a">Anthropicが公式に公開している、Claudeの実践的な使い方をまとめたサンプル集です。GitHubで無料公開されており、「分類する」「PDFを要約する」といったテーマごとに動かせるコードが1本ずつ入っています。ただし中身のほとんどはJupyter Notebook形式のプログラムで、開発者向けの資料です。</p>
+        </details>
+        <details>
+          <summary>Cookbookを使うのにプログラミングは必要ですか？</summary>
+          <p class="faq-a">必要です。ファイルの9割以上がPythonのJupyter Notebookで、動かすにはPythonの実行環境とAPIキーが要ります。プログラミングをしない方は無理に開く必要はありません。まずはチャット画面のAIを使いこなす方が先です。</p>
+        </details>
+        <details>
+          <summary>APIキーとは何ですか？無料ですか？</summary>
+          <p class="faq-a">プログラムからAIを呼び出すためのパスワードのような文字列です。取得は無料ですが、実際にプログラムからAIを動かすと使った分だけ料金がかかる従量課金制です。チャット画面の月額プランとは別の料金体系なので注意してください。</p>
+        </details>
+        <details>
+          <summary>Cookbookはどこから始めればいいですか？</summary>
+          <p class="faq-a">Cookbook自身が「先にAPI Fundamentalsコースを見てほしい」と案内しています。Anthropicは学習用のコース集を別に公開しており、API入門→プロンプト講座→実践→評価→ツール活用という推奨順があります。Cookbookはその後に開く「逆引き辞典」と考えるのが正解です。</p>
+        </details>
+      </section>
+
+      <aside class="next-read">
+        <span class="next-label">次に読む</span>
+        <a href="howto.html#dev">AI応用編：プログラミング未経験でもアプリを作る方法 →</a>
+        <p>「Cookbookはまだ早い」と感じた方へ。v0やClaude Codeなら、日本語で頼むだけでアプリが作れます。そちらから始めるのが現実的な近道です。</p>
+      </aside>
+
+    </div>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <nav class="footer-nav" aria-label="フッターナビゲーション">
+      <ul>
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="start.html">AI入門編（AIの始め方）</a></li>
+        <li><a href="basics.html">基礎知識（プロンプト・Skillsとは）</a></li>
+        <li><a href="howto.html">AI応用編（各AIの使い方）</a></li>
+        <li><a href="business.html">実業務編（業務効率化）</a></li>
+        <li><a href="sidejob.html">副業編（AI副業の始め方）</a></li>
+        <li><a href="cookbook.html">番外編（Claude Cookbookの使い方）</a></li>
+      </ul>
+    </nav>
+    <p class="footer-note">※本サイトの情報は執筆時点のものです。各ツールの料金・機能は変更される場合があるため、利用前に公式サイトでご確認ください。Claude・Anthropicは Anthropic PBC の製品・商標です。本サイトは非公式の解説サイトです。</p>
+    <p class="copyright">© 2026 DEMI AI STUDIO</p>
+  </div>
+</footer>
+
+</body>
+</html>
